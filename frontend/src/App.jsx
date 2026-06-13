@@ -4,6 +4,7 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import EvidenceCard from "./EvidenceCard";
 import FilterPanel from "./FilterPanel";
 import SearchBox from "./SearchBox";
+import Tooltip from "./Tooltip";
 import { scoreColor, scoreClass, scoreLabel } from "./utils";
 
 const API = "http://localhost:8000";
@@ -19,12 +20,41 @@ const DEFAULT_FILTERS = {
   minScore: 0,
   minAge: 0,
 };
-const DEFAULT_LAYERS = { catchments: false, stormInlets: false };
+const DEFAULT_LAYERS = { pipes: true, roads: false, catchments: false, stormInlets: false, heatmap: false, waterMains: false, waterRisk: false };
 
 function scoreToClass(s) {
   if (s >= 50) return "high";
   if (s >= 35) return "medium";
   return "low";
+}
+
+const HIST_COLORS = ["#22c55e","#22c55e","#22c55e","#f59e0b","#f59e0b","#ef4444","#ef4444"];
+const HIST_LABELS = ["0","10","20","30","40","50","60+"];
+
+function ScoreHistogram({ dist }) {
+  if (!dist.length) return null;
+  const max = Math.max(...dist, 1);
+  const BAR_W = 18, GAP = 3, H = 38;
+  const W = dist.length * (BAR_W + GAP) - GAP;
+  return (
+    <div className="legend-hist">
+      <div className="legend-hist-title">Score distribution</div>
+      <svg width={W} height={H} style={{ display: "block", overflow: "visible" }}>
+        {dist.map((count, i) => {
+          const h = Math.max(3, (count / max) * (H - 6));
+          const x = i * (BAR_W + GAP);
+          return (
+            <g key={i}>
+              <rect x={x} y={H - h} width={BAR_W} height={h}
+                fill={HIST_COLORS[i]} opacity={0.75} rx={3} />
+              <text x={x + BAR_W / 2} y={H + 11} textAnchor="middle"
+                fontSize="8" fill="var(--text-3)">{HIST_LABELS[i]}</text>
+            </g>
+          );
+        })}
+      </svg>
+    </div>
+  );
 }
 
 export default function App() {
@@ -39,8 +69,12 @@ export default function App() {
   const [layers, setLayers]           = useState(DEFAULT_LAYERS);
   const [flyTarget, setFlyTarget]     = useState(null);
   const mapRef = useRef(null);
-  const [catchmentGeo, setCatchmentGeo] = useState(null);
-  const [inletsGeo, setInletsGeo]     = useState(null);
+  const [catchmentGeo, setCatchmentGeo]   = useState(null);
+  const [inletsGeo, setInletsGeo]         = useState(null);
+  const [roadsGeo, setRoadsGeo]           = useState(null);
+  const [waterMainsGeo, setWaterMainsGeo] = useState(null);
+  const [waterRiskGeo, setWaterRiskGeo]   = useState(null);
+  const [scoreDist, setScoreDist]     = useState([]);
 
   // sync theme
   useEffect(() => {
@@ -62,14 +96,22 @@ export default function App() {
       setFilteredGeo(geo);
       setStats(s);
       setLoading(false);
+      const bins = Array(7).fill(0);
+      features.forEach(f => {
+        const bucket = Math.min(Math.floor(f.properties.score / 10), 6);
+        bins[bucket]++;
+      });
+      setScoreDist(bins);
     });
   }, []);
 
   // load layer data lazily
   useEffect(() => {
+    if (layers.roads && !roadsGeo) {
+      fetch("/roads.geojson").then(r => r.json()).then(setRoadsGeo);
+    }
     if (layers.catchments && !catchmentGeo) {
       fetch("/catchments.geojson").then(r => r.json()).then(fc => {
-        // add color index
         const features = fc.features.map((f, i) => ({
           ...f, properties: { ...f.properties, _color: CATCHMENT_COLORS[i % CATCHMENT_COLORS.length] }
         }));
@@ -79,7 +121,13 @@ export default function App() {
     if (layers.stormInlets && !inletsGeo) {
       fetch("/storm_inlets.geojson").then(r => r.json()).then(setInletsGeo);
     }
-  }, [layers, catchmentGeo, inletsGeo]);
+    if (layers.waterMains && !waterMainsGeo) {
+      fetch("/water_mains.geojson").then(r => r.json()).then(setWaterMainsGeo);
+    }
+    if (layers.waterRisk && !waterRiskGeo) {
+      fetch("/water_pipe_risk.geojson").then(r => r.json()).then(setWaterRiskGeo);
+    }
+  }, [layers, catchmentGeo, inletsGeo, roadsGeo, waterMainsGeo, waterRiskGeo]);
 
   // fly map when search returns a flyTo
   useEffect(() => {
@@ -87,6 +135,21 @@ export default function App() {
     mapRef.current.flyTo({ center: [flyTarget.lng, flyTarget.lat], zoom: flyTarget.zoom ?? 15, duration: 1200 });
     setFlyTarget(null);
   }, [flyTarget]);
+
+  // animated glow pulse on pipe layer
+  useEffect(() => {
+    if (!layers.pipes) return;
+    let t = 0;
+    const id = setInterval(() => {
+      t += 0.045;
+      const dark = theme === "dark";
+      const base = dark ? 0.04 : 0.025;
+      const amp  = dark ? 0.08 : 0.05;
+      const opacity = base + amp * (0.5 + 0.5 * Math.sin(t));
+      try { mapRef.current?.setPaintProperty("pipes-glow", "line-opacity", opacity); } catch {}
+    }, 60);
+    return () => clearInterval(id);
+  }, [theme, layers.pipes]);
 
   // apply filters whenever filters or base geojson changes
   useEffect(() => {
@@ -154,19 +217,19 @@ export default function App() {
           <div className="topbar-stats">
             <div className="stat-chip red">
               <div className="chip-val">{stats.high_priority}</div>
-              <div className="chip-lbl">High<br/>Priority</div>
+              <div className="chip-lbl">High Priority <Tooltip text="Pipes with readiness score ≥50. Most urgent to separate — old pipes under failing pavement with bundling potential." /></div>
             </div>
             <div className="stat-chip amber">
               <div className="chip-val">{stats.medium_priority}</div>
-              <div className="chip-lbl">Medium<br/>Priority</div>
+              <div className="chip-lbl">Medium Priority <Tooltip text="Pipes with readiness score 35–50. Good candidates once high-priority catchments are underway." /></div>
             </div>
             <div className="stat-chip green">
               <div className="chip-val">{stats.low_priority}</div>
-              <div className="chip-lbl">Low<br/>Priority</div>
+              <div className="chip-lbl">Low Priority <Tooltip text="Pipes with readiness score <35. Newer pipes, shallower pavement condition, or already near separated segments." /></div>
             </div>
             <div className="stat-chip blue">
               <div className="chip-val">{stats.total_segments.toLocaleString()}</div>
-              <div className="chip-lbl">Combined<br/>Pipes</div>
+              <div className="chip-lbl">Combined Pipes <Tooltip text="Total combined sewer segments in Somerville — carrying sewage and stormwater in one shared pipe. All need separation as part of the $1.29B CSO plan." /></div>
             </div>
           </div>
         )}
@@ -199,6 +262,50 @@ export default function App() {
         >
           <NavigationControl position="top-left" style={{ top: 8 }} />
 
+
+          {/* road PCI layer */}
+          {layers.roads && roadsGeo && (
+            <Source id="roads" type="geojson" data={roadsGeo}>
+              <Layer id="roads-layer" type="line" paint={{
+                "line-color": [
+                  "step", ["get", "pci_score"],
+                  "#ef4444",  40,
+                  "#f59e0b",  70,
+                  "#22c55e"
+                ],
+                "line-width": ["interpolate", ["linear"], ["zoom"], 12, 2, 16, 5],
+                "line-opacity": 0.6,
+              }} />
+            </Source>
+          )}
+
+          {/* water mains (raw, blue) */}
+          {layers.waterMains && waterMainsGeo && (
+            <Source id="water-mains" type="geojson" data={waterMainsGeo}>
+              <Layer id="water-mains-layer" type="line" paint={{
+                "line-color": "#3b82f6",
+                "line-width": ["interpolate", ["linear"], ["zoom"], 12, 1, 16, 3],
+                "line-opacity": 0.7,
+              }} />
+            </Source>
+          )}
+
+          {/* water main risk */}
+          {layers.waterRisk && waterRiskGeo && (
+            <Source id="water-risk" type="geojson" data={waterRiskGeo}>
+              <Layer id="water-risk-layer" type="line" paint={{
+                "line-color": [
+                  "match", ["get", "RiskQuad"],
+                  "Failing",                  "#ef4444",
+                  "High Risk",                "#f97316",
+                  "Maintenance & Monitoring", "#f59e0b",
+                  "#22c55e",
+                ],
+                "line-width": ["interpolate", ["linear"], ["zoom"], 12, 1.5, 16, 4],
+                "line-opacity": 0.8,
+              }} />
+            </Source>
+          )}
 
           {/* catchment zones */}
           {layers.catchments && catchmentGeo && (
@@ -238,8 +345,28 @@ export default function App() {
             </Source>
           )}
 
+          {/* urgency heatmap */}
+          {layers.heatmap && filteredGeo && (
+            <Source id="sewer-heat" type="geojson" data={filteredGeo}>
+              <Layer id="pipe-heatmap" type="heatmap" paint={{
+                "heatmap-weight": ["interpolate", ["linear"], ["get", "score"], 0, 0, 100, 1],
+                "heatmap-intensity": ["interpolate", ["linear"], ["zoom"], 10, 0.6, 16, 2.5],
+                "heatmap-color": [
+                  "interpolate", ["linear"], ["heatmap-density"],
+                  0,    "rgba(0,0,0,0)",
+                  0.15, "rgba(34,197,94,0.5)",
+                  0.4,  "rgba(245,158,11,0.75)",
+                  0.7,  "rgba(239,68,68,0.9)",
+                  1.0,  "rgba(255,80,30,1)",
+                ],
+                "heatmap-radius": ["interpolate", ["linear"], ["zoom"], 10, 25, 14, 45, 16, 70],
+                "heatmap-opacity": 0.88,
+              }} />
+            </Source>
+          )}
+
           {/* sewer pipes */}
-          {filteredGeo && (
+          {layers.pipes && filteredGeo && (
             <Source id="sewers" type="geojson" data={filteredGeo}>
               <Layer id="pipes-glow" type="line" paint={{
                 "line-color": ["rgb", ["get", "_r"], ["get", "_g"], ["get", "_b"]],
@@ -289,6 +416,7 @@ export default function App() {
         <div className="legend-labels">
           <span>Low</span><span>Medium</span><span>High</span>
         </div>
+        <ScoreHistogram dist={scoreDist} />
       </div>
 
       {/* ── export ── */}

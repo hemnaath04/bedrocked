@@ -32,7 +32,8 @@ The frontend has 2,404 combined sewer pipe segments already loaded. Each segment
 - asset_count: number of bundlable assets nearby (ramps, catch basins, sidewalks)
 - network_leverage: 0, 1, or 2 (how many connected pipes are already separated)
 - depth_ft: dig depth in feet
-- f1_pavement, f2_age, f3_depth, f4_bundling, f5_network: individual factor scores 0–100
+- water_risk_quad: risk tier of nearest water main per Somerville DPW — "Failing", "High Risk", "Maintenance & Monitoring", "Low Risk", or "None"
+- f1_pavement, f2_age, f3_depth, f4_bundling, f5_network, f6_water_risk: individual factor scores 0–100
 
 Available catchments: A (Alewife), C1, C2, CA, S1, S2, M (Medford)
 

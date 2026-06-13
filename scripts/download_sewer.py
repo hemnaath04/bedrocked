@@ -9,7 +9,8 @@ import json, os, sys, time, urllib.request, urllib.parse
 from pathlib import Path
 from pyproj import Transformer
 
-BASE = "https://maps.somervillema.gov/arcgis/rest/services/SewerAndStormWaterSystem/MapServer"
+BASE       = "https://maps.somervillema.gov/arcgis/rest/services/SewerAndStormWaterSystem/MapServer"
+BASE_WATER = "https://maps.somervillema.gov/arcgis/rest/services/WaterDistributionSystem/MapServer"
 OUT_DIR = Path(__file__).parent.parent / "public" / "data" / "sewer"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -76,8 +77,8 @@ def fetch_post(url: str, params: dict, retries: int = 3) -> dict:
             time.sleep(1)
 
 
-def get_all_ids(layer_id: int) -> list[int]:
-    url = f"{BASE}/{layer_id}/query?returnIdsOnly=true&where=OBJECTID+IS+NOT+NULL&f=json"
+def get_all_ids(layer_id: int, base_url: str = BASE) -> list[int]:
+    url = f"{base_url}/{layer_id}/query?returnIdsOnly=true&where=OBJECTID+IS+NOT+NULL&f=json"
     d = fetch(url)
     return sorted(d.get("objectIds") or [])
 
@@ -106,14 +107,14 @@ def esri_to_geojson_geometry(esri_geom: dict, geom_type: str) -> dict | None:
     return None
 
 
-def download_layer(name: str, layer_id: int, fields: list[str]) -> None:
+def download_layer(name: str, layer_id: int, fields: list[str], base_url: str = BASE) -> None:
     out_path = OUT_DIR / f"{name}.geojson"
     if out_path.exists():
         print(f"  skip (exists): {name}.geojson")
         return
 
     print(f"  downloading layer {layer_id}: {name}")
-    ids = get_all_ids(layer_id)
+    ids = get_all_ids(layer_id, base_url)
     print(f"    {len(ids)} features to fetch")
 
     fields_param = urllib.parse.quote(",".join(fields))
@@ -122,7 +123,7 @@ def download_layer(name: str, layer_id: int, fields: list[str]) -> None:
 
     for i in range(0, len(ids), batch_size):
         batch = ids[i : i + batch_size]
-        url = f"{BASE}/{layer_id}/query"
+        url = f"{base_url}/{layer_id}/query"
         d = fetch_post(url, {
             "objectIds": ",".join(map(str, batch)),
             "outFields": ",".join(fields),
@@ -147,10 +148,32 @@ def download_layer(name: str, layer_id: int, fields: list[str]) -> None:
     print(f"  ✓ {name}.geojson ({len(features)} features)          ")
 
 
+WATER_LAYERS = {
+    "water_mains": (
+        6,
+        ["OBJECTID", "DIAMETER", "INST_DATE", "MATERIAL", "STREET",
+         "PIPE_LEN", "SIZE", "SvcType", "TYPE", "Shape_Length"],
+        BASE_WATER,
+    ),
+    "water_pipe_risk": (
+        5,
+        ["OBJECTID", "INSTALL_YR", "D", "Street", "from_street", "to_street",
+         "NumbBreaks", "LoFscore", "CoFscore", "RiskQuad", "RiskMult",
+         "Prelim_Rehab_Rec", "Prelim_Cost_Estimate", "Shape_Length"],
+        BASE_WATER,
+    ),
+}
+
+
 def main():
     print(f"Output: {OUT_DIR}")
     for name, (layer_id, fields) in LAYERS.items():
         download_layer(name, layer_id, fields)
+
+    print("\n--- Water pipeline data ---")
+    for name, (layer_id, fields, base) in WATER_LAYERS.items():
+        download_layer(name, layer_id, fields, base_url=base)
+
     print("\nDone.")
     for f in sorted(OUT_DIR.glob("*.geojson")):
         size_kb = f.stat().st_size / 1024

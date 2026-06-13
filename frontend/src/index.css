@@ -110,6 +110,33 @@ body {
   text-transform: uppercase; letter-spacing: 0.7px; line-height: 1.3;
 }
 
+/* ── info tooltip ────────────────────────────────────────────── */
+.info-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--surface-2); border: 1px solid var(--border-2);
+  color: var(--text-3); font-size: 9px; font-weight: 800;
+  cursor: help; flex-shrink: 0; line-height: 1;
+  transition: border-color 0.15s, color 0.15s;
+  font-style: normal;
+}
+.info-btn:hover { border-color: var(--blue); color: var(--blue); }
+
+.info-popup {
+  position: fixed; z-index: 9999;
+  background: var(--surface);
+  border: 1px solid var(--border-2);
+  border-radius: 10px;
+  padding: 10px 12px;
+  max-width: 220px;
+  font-size: 12px; line-height: 1.55;
+  color: var(--text-2);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  pointer-events: none;
+  animation: fadeIn 0.12s ease;
+}
+.info-popup strong { color: var(--text); display: block; margin-bottom: 3px; font-size: 12px; }
+
 /* ── search box ──────────────────────────────────────────────── */
 .search-wrap {
   position: fixed; top: 70px; left: 50%; transform: translateX(-50%);
@@ -317,6 +344,7 @@ body {
 /* ── legend ──────────────────────────────────────────────────── */
 .legend {
   position: fixed; bottom: 20px; left: 16px; z-index: 100;
+  width: 175px;
   background: var(--overlay-bg); backdrop-filter: blur(16px);
   border: 1px solid var(--border); border-radius: 12px;
   padding: 14px 16px;
@@ -465,6 +493,18 @@ body {
 }
 .meta-item .m-label { font-size: 10px; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.5px; }
 .meta-item .m-val { font-size: 13px; font-weight: 700; color: var(--text); margin-top: 2px; }
+
+/* ── score histogram ─────────────────────────────────────────── */
+.legend-hist {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+.legend-hist-title {
+  font-size: 9px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1px;
+  color: var(--text-3); margin-bottom: 6px;
+}
 
 /* ── tooltip ─────────────────────────────────────────────────── */
 .map-tooltip {
