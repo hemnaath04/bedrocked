@@ -1,0 +1,1909 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08395784689358,
+     42.39279204625668
+    ]
+   },
+   "properties": {
+    "basin_id": "1955",
+    "needs_attention": true,
+    "condition_score": 97,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08562496876068,
+     42.39575743388444
+    ]
+   },
+   "properties": {
+    "basin_id": "1931",
+    "needs_attention": true,
+    "condition_score": 96,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08932234422028,
+     42.395476191634785
+    ]
+   },
+   "properties": {
+    "basin_id": "247",
+    "needs_attention": true,
+    "condition_score": 96,
+    "teacher_label": "damaged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09953669863211,
+     42.39138779979926
+    ]
+   },
+   "properties": {
+    "basin_id": "87",
+    "needs_attention": true,
+    "condition_score": 95,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09603726120253,
+     42.38797202572047
+    ]
+   },
+   "properties": {
+    "basin_id": "203",
+    "needs_attention": true,
+    "condition_score": 94,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.1000983842331,
+     42.39192794831421
+    ]
+   },
+   "properties": {
+    "basin_id": "86",
+    "needs_attention": true,
+    "condition_score": 93,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08592445774875,
+     42.39492889107627
+    ]
+   },
+   "properties": {
+    "basin_id": "1929",
+    "needs_attention": true,
+    "condition_score": 93,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09308236323156,
+     42.3873778762537
+    ]
+   },
+   "properties": {
+    "basin_id": "209",
+    "needs_attention": true,
+    "condition_score": 92,
+    "teacher_label": "damaged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08655643311342,
+     42.39458827986817
+    ]
+   },
+   "properties": {
+    "basin_id": "1902",
+    "needs_attention": true,
+    "condition_score": 91,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09911051696349,
+     42.38960308603383
+    ]
+   },
+   "properties": {
+    "basin_id": "164",
+    "needs_attention": true,
+    "condition_score": 91,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.0959974749236,
+     42.39077924041211
+    ]
+   },
+   "properties": {
+    "basin_id": "176",
+    "needs_attention": true,
+    "condition_score": 90,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09479690052765,
+     42.389577539102085
+    ]
+   },
+   "properties": {
+    "basin_id": "152",
+    "needs_attention": true,
+    "condition_score": 90,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08925479316257,
+     42.39840315999415
+    ]
+   },
+   "properties": {
+    "basin_id": "1894",
+    "needs_attention": true,
+    "condition_score": 89,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.07871337125793,
+     42.39321618120621
+    ]
+   },
+   "properties": {
+    "basin_id": "1991",
+    "needs_attention": true,
+    "condition_score": 88,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09787131571494,
+     42.39329154283521
+    ]
+   },
+   "properties": {
+    "basin_id": "14",
+    "needs_attention": true,
+    "condition_score": 88,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09079657126206,
+     42.37433342322552
+    ]
+   },
+   "properties": {
+    "basin_id": "864",
+    "needs_attention": true,
+    "condition_score": 88,
+    "teacher_label": "damaged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08316825456163,
+     42.39717129997886
+    ]
+   },
+   "properties": {
+    "basin_id": "1959",
+    "needs_attention": true,
+    "condition_score": 87,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09703311091256,
+     42.38923485683976
+    ]
+   },
+   "properties": {
+    "basin_id": "172",
+    "needs_attention": true,
+    "condition_score": 87,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09017944422965,
+     42.37439611642826
+    ]
+   },
+   "properties": {
+    "basin_id": "861",
+    "needs_attention": true,
+    "condition_score": 86,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08395734439526,
+     42.39417777503454
+    ]
+   },
+   "properties": {
+    "basin_id": "1951",
+    "needs_attention": true,
+    "condition_score": 86,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09856322134048,
+     42.390430146601894
+    ]
+   },
+   "properties": {
+    "basin_id": "163",
+    "needs_attention": true,
+    "condition_score": 86,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.10049059019775,
+     42.3899088837658
+    ]
+   },
+   "properties": {
+    "basin_id": "5",
+    "needs_attention": true,
+    "condition_score": 86,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09145401639351,
+     42.3745832348491
+    ]
+   },
+   "properties": {
+    "basin_id": "887",
+    "needs_attention": true,
+    "condition_score": 86,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.0951860417241,
+     42.375895209965506
+    ]
+   },
+   "properties": {
+    "basin_id": "894",
+    "needs_attention": true,
+    "condition_score": 85,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09656019092463,
+     42.391790267551336
+    ]
+   },
+   "properties": {
+    "basin_id": "187",
+    "needs_attention": true,
+    "condition_score": 85,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08796893618508,
+     42.38094711551023
+    ]
+   },
+   "properties": {
+    "basin_id": "119",
+    "needs_attention": true,
+    "condition_score": 85,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09561468108063,
+     42.38807403508951
+    ]
+   },
+   "properties": {
+    "basin_id": "215",
+    "needs_attention": true,
+    "condition_score": 85,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09522764876392,
+     42.3888896557395
+    ]
+   },
+   "properties": {
+    "basin_id": "154",
+    "needs_attention": true,
+    "condition_score": 85,
+    "teacher_label": "damaged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.0933888751911,
+     42.38661077588104
+    ]
+   },
+   "properties": {
+    "basin_id": "223",
+    "needs_attention": true,
+    "condition_score": 85,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08536983871736,
+     42.39252797875202
+    ]
+   },
+   "properties": {
+    "basin_id": "254",
+    "needs_attention": true,
+    "condition_score": 85,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09530756210377,
+     42.392034904979624
+    ]
+   },
+   "properties": {
+    "basin_id": "182",
+    "needs_attention": true,
+    "condition_score": 84,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09116203532133,
+     42.374469618724326
+    ]
+   },
+   "properties": {
+    "basin_id": "878",
+    "needs_attention": true,
+    "condition_score": 84,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09697517800103,
+     42.39252417697571
+    ]
+   },
+   "properties": {
+    "basin_id": "156",
+    "needs_attention": true,
+    "condition_score": 84,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09477830869008,
+     42.37458851931502
+    ]
+   },
+   "properties": {
+    "basin_id": "900",
+    "needs_attention": true,
+    "condition_score": 83,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.0979835611688,
+     42.39504352811675
+    ]
+   },
+   "properties": {
+    "basin_id": "2",
+    "needs_attention": true,
+    "condition_score": 83,
+    "teacher_label": "damaged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09314907127528,
+     42.38727508704664
+    ]
+   },
+   "properties": {
+    "basin_id": "210",
+    "needs_attention": true,
+    "condition_score": 83,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09439007091612,
+     42.387152122050985
+    ]
+   },
+   "properties": {
+    "basin_id": "219",
+    "needs_attention": true,
+    "condition_score": 82,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09660389619464,
+     42.39170088782096
+    ]
+   },
+   "properties": {
+    "basin_id": "192",
+    "needs_attention": true,
+    "condition_score": 82,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09576540249566,
+     42.391337987819604
+    ]
+   },
+   "properties": {
+    "basin_id": "175",
+    "needs_attention": true,
+    "condition_score": 82,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.0924275033982,
+     42.3750597958055
+    ]
+   },
+   "properties": {
+    "basin_id": "885",
+    "needs_attention": true,
+    "condition_score": 80,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.07902495148724,
+     42.39514582798431
+    ]
+   },
+   "properties": {
+    "basin_id": "2007",
+    "needs_attention": true,
+    "condition_score": 80,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09645957508849,
+     42.390106723422846
+    ]
+   },
+   "properties": {
+    "basin_id": "178",
+    "needs_attention": true,
+    "condition_score": 80,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.07839236348771,
+     42.39529656282222
+    ]
+   },
+   "properties": {
+    "basin_id": "2009",
+    "needs_attention": true,
+    "condition_score": 80,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.07855369228272,
+     42.39202548330615
+    ]
+   },
+   "properties": {
+    "basin_id": "2021",
+    "needs_attention": true,
+    "condition_score": 79,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09203573702857,
+     42.387054217106716
+    ]
+   },
+   "properties": {
+    "basin_id": "228",
+    "needs_attention": true,
+    "condition_score": 79,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08907915030036,
+     42.37422989523264
+    ]
+   },
+   "properties": {
+    "basin_id": "851",
+    "needs_attention": true,
+    "condition_score": 79,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09864941413201,
+     42.39533095984762
+    ]
+   },
+   "properties": {
+    "basin_id": "89",
+    "needs_attention": true,
+    "condition_score": 79,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09722497108432,
+     42.389271730195176
+    ]
+   },
+   "properties": {
+    "basin_id": "199",
+    "needs_attention": true,
+    "condition_score": 79,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09746249602152,
+     42.39195889633349
+    ]
+   },
+   "properties": {
+    "basin_id": "159",
+    "needs_attention": true,
+    "condition_score": 77,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.0944219487178,
+     42.37583299865572
+    ]
+   },
+   "properties": {
+    "basin_id": "895",
+    "needs_attention": true,
+    "condition_score": 77,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09826818520709,
+     42.39515746182473
+    ]
+   },
+   "properties": {
+    "basin_id": "3",
+    "needs_attention": true,
+    "condition_score": 77,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08419335109791,
+     42.39734249560111
+    ]
+   },
+   "properties": {
+    "basin_id": "1957",
+    "needs_attention": true,
+    "condition_score": 77,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09114575707406,
+     42.383743864178655
+    ]
+   },
+   "properties": {
+    "basin_id": "132",
+    "needs_attention": true,
+    "condition_score": 76,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.0878101664444,
+     42.38086214015432
+    ]
+   },
+   "properties": {
+    "basin_id": "121",
+    "needs_attention": true,
+    "condition_score": 76,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.0872966131124,
+     42.39695402682791
+    ]
+   },
+   "properties": {
+    "basin_id": "1919",
+    "needs_attention": true,
+    "condition_score": 75,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09568293329218,
+     42.38892879456701
+    ]
+   },
+   "properties": {
+    "basin_id": "174",
+    "needs_attention": true,
+    "condition_score": 75,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.0913096515872,
+     42.37447418258955
+    ]
+   },
+   "properties": {
+    "basin_id": "889",
+    "needs_attention": true,
+    "condition_score": 75,
+    "teacher_label": "damaged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.0902601641792,
+     42.38251878772235
+    ]
+   },
+   "properties": {
+    "basin_id": "130",
+    "needs_attention": true,
+    "condition_score": 74,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.0827081336162,
+     42.3916705261676
+    ]
+   },
+   "properties": {
+    "basin_id": "1941",
+    "needs_attention": true,
+    "condition_score": 74,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08586784294003,
+     42.39489178081101
+    ]
+   },
+   "properties": {
+    "basin_id": "1928",
+    "needs_attention": true,
+    "condition_score": 73,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09327098597593,
+     42.38734474586651
+    ]
+   },
+   "properties": {
+    "basin_id": "221",
+    "needs_attention": true,
+    "condition_score": 72,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09727268054078,
+     42.38906370377902
+    ]
+   },
+   "properties": {
+    "basin_id": "168",
+    "needs_attention": true,
+    "condition_score": 72,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.0895924161884,
+     42.396867315272054
+    ]
+   },
+   "properties": {
+    "basin_id": "1899",
+    "needs_attention": true,
+    "condition_score": 72,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.07754506324245,
+     42.393196511941184
+    ]
+   },
+   "properties": {
+    "basin_id": "2029",
+    "needs_attention": true,
+    "condition_score": 71,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08574104586847,
+     42.394940580805425
+    ]
+   },
+   "properties": {
+    "basin_id": "1913",
+    "needs_attention": true,
+    "condition_score": 70,
+    "teacher_label": "damaged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09282093001002,
+     42.37539415496306
+    ]
+   },
+   "properties": {
+    "basin_id": "875",
+    "needs_attention": true,
+    "condition_score": 69,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.07787879819303,
+     42.392136973484035
+    ]
+   },
+   "properties": {
+    "basin_id": "2023",
+    "needs_attention": true,
+    "condition_score": 68,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.07737524966059,
+     42.38732844239576
+    ]
+   },
+   "properties": {
+    "basin_id": "2043",
+    "needs_attention": true,
+    "condition_score": 66,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.07749203332446,
+     42.39520222304691
+    ]
+   },
+   "properties": {
+    "basin_id": "2032",
+    "needs_attention": true,
+    "condition_score": 64,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08612009708773,
+     42.397680432409715
+    ]
+   },
+   "properties": {
+    "basin_id": "1940",
+    "needs_attention": true,
+    "condition_score": 61,
+    "teacher_label": "clogged",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08788907595623,
+     42.380956947362165
+    ]
+   },
+   "properties": {
+    "basin_id": "122",
+    "needs_attention": false,
+    "condition_score": 21,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09668108327962,
+     42.389969299528666
+    ]
+   },
+   "properties": {
+    "basin_id": "177",
+    "needs_attention": false,
+    "condition_score": 21,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09845246724491,
+     42.39053686330075
+    ]
+   },
+   "properties": {
+    "basin_id": "162",
+    "needs_attention": false,
+    "condition_score": 20,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09806840611981,
+     42.389945074131354
+    ]
+   },
+   "properties": {
+    "basin_id": "195",
+    "needs_attention": false,
+    "condition_score": 20,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.07838152181559,
+     42.395241560313615
+    ]
+   },
+   "properties": {
+    "basin_id": "2008",
+    "needs_attention": false,
+    "condition_score": 19,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08962037390695,
+     42.39542490985651
+    ]
+   },
+   "properties": {
+    "basin_id": "245",
+    "needs_attention": false,
+    "condition_score": 19,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09080502505702,
+     42.37475762198952
+    ]
+   },
+   "properties": {
+    "basin_id": "868",
+    "needs_attention": false,
+    "condition_score": 18,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.07900444658563,
+     42.393535414256554
+    ]
+   },
+   "properties": {
+    "basin_id": "2014",
+    "needs_attention": false,
+    "condition_score": 17,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09728132787988,
+     42.3891839514375
+    ]
+   },
+   "properties": {
+    "basin_id": "197",
+    "needs_attention": false,
+    "condition_score": 17,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08672423484418,
+     42.39371984650058
+    ]
+   },
+   "properties": {
+    "basin_id": "251",
+    "needs_attention": false,
+    "condition_score": 16,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09267071257638,
+     42.37520727915907
+    ]
+   },
+   "properties": {
+    "basin_id": "883",
+    "needs_attention": false,
+    "condition_score": 16,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.0956413579087,
+     42.39152486506545
+    ]
+   },
+   "properties": {
+    "basin_id": "180",
+    "needs_attention": false,
+    "condition_score": 16,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08811032372131,
+     42.3808933310258
+    ]
+   },
+   "properties": {
+    "basin_id": "916",
+    "needs_attention": false,
+    "condition_score": 15,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08038039398156,
+     42.39282470438389
+    ]
+   },
+   "properties": {
+    "basin_id": "1970",
+    "needs_attention": false,
+    "condition_score": 15,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09086949640229,
+     42.38669360278465
+    ]
+   },
+   "properties": {
+    "basin_id": "231",
+    "needs_attention": false,
+    "condition_score": 15,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.0840905064453,
+     42.392957563407954
+    ]
+   },
+   "properties": {
+    "basin_id": "1954",
+    "needs_attention": false,
+    "condition_score": 14,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.07923848529042,
+     42.39181190203759
+    ]
+   },
+   "properties": {
+    "basin_id": "2019",
+    "needs_attention": false,
+    "condition_score": 14,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08831768966229,
+     42.397624954987485
+    ]
+   },
+   "properties": {
+    "basin_id": "1920",
+    "needs_attention": false,
+    "condition_score": 14,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.0835667357151,
+     42.394897223651284
+    ]
+   },
+   "properties": {
+    "basin_id": "1945",
+    "needs_attention": false,
+    "condition_score": 14,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08148589024619,
+     42.395961784653935
+    ]
+   },
+   "properties": {
+    "basin_id": "1962",
+    "needs_attention": false,
+    "condition_score": 13,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09757358338766,
+     42.39383908791625
+    ]
+   },
+   "properties": {
+    "basin_id": "15",
+    "needs_attention": false,
+    "condition_score": 13,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.07988851424071,
+     42.39501389118932
+    ]
+   },
+   "properties": {
+    "basin_id": "2003",
+    "needs_attention": false,
+    "condition_score": 12,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.07747612434905,
+     42.3923314933436
+    ]
+   },
+   "properties": {
+    "basin_id": "2025",
+    "needs_attention": false,
+    "condition_score": 12,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08077569264587,
+     42.39341848555139
+    ]
+   },
+   "properties": {
+    "basin_id": "1968",
+    "needs_attention": false,
+    "condition_score": 12,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09539785877213,
+     42.3765752113533
+    ]
+   },
+   "properties": {
+    "basin_id": "1826",
+    "needs_attention": false,
+    "condition_score": 12,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08408615146013,
+     42.397475097669634
+    ]
+   },
+   "properties": {
+    "basin_id": "1958",
+    "needs_attention": false,
+    "condition_score": 12,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08521906179915,
+     42.3983440342346
+    ]
+   },
+   "properties": {
+    "basin_id": "1887",
+    "needs_attention": false,
+    "condition_score": 12,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.080045954175,
+     42.39592665141189
+    ]
+   },
+   "properties": {
+    "basin_id": "1980",
+    "needs_attention": false,
+    "condition_score": 11,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.07746858231624,
+     42.38735176919094
+    ]
+   },
+   "properties": {
+    "basin_id": "2042",
+    "needs_attention": false,
+    "condition_score": 11,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09238523442339,
+     42.375122248082214
+    ]
+   },
+   "properties": {
+    "basin_id": "882",
+    "needs_attention": false,
+    "condition_score": 11,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09170763024242,
+     42.3748157509288
+    ]
+   },
+   "properties": {
+    "basin_id": "880",
+    "needs_attention": false,
+    "condition_score": 11,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.07888306699549,
+     42.39582709087325
+    ]
+   },
+   "properties": {
+    "basin_id": "1976",
+    "needs_attention": false,
+    "condition_score": 11,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.07743334688188,
+     42.39280042733196
+    ]
+   },
+   "properties": {
+    "basin_id": "2027",
+    "needs_attention": false,
+    "condition_score": 10,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09274549614726,
+     42.37539271376362
+    ]
+   },
+   "properties": {
+    "basin_id": "876",
+    "needs_attention": false,
+    "condition_score": 10,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09466092857646,
+     42.393148219750685
+    ]
+   },
+   "properties": {
+    "basin_id": "148",
+    "needs_attention": false,
+    "condition_score": 10,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.07731208513604,
+     42.387971492813804
+    ]
+   },
+   "properties": {
+    "basin_id": "2040",
+    "needs_attention": false,
+    "condition_score": 10,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.07926252551988,
+     42.394492059300646
+    ]
+   },
+   "properties": {
+    "basin_id": "2012",
+    "needs_attention": false,
+    "condition_score": 9,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09358762418402,
+     42.37584765074581
+    ]
+   },
+   "properties": {
+    "basin_id": "890",
+    "needs_attention": false,
+    "condition_score": 8,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08000070197832,
+     42.39313785223803
+    ]
+   },
+   "properties": {
+    "basin_id": "1988",
+    "needs_attention": false,
+    "condition_score": 8,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08022507745356,
+     42.394958540314114
+    ]
+   },
+   "properties": {
+    "basin_id": "2000",
+    "needs_attention": false,
+    "condition_score": 8,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.07923848529032,
+     42.395929088206316
+    ]
+   },
+   "properties": {
+    "basin_id": "1977",
+    "needs_attention": false,
+    "condition_score": 7,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.08620083181495,
+     42.39771828319804
+    ]
+   },
+   "properties": {
+    "basin_id": "1939",
+    "needs_attention": false,
+    "condition_score": 4,
+    "teacher_label": "clear",
+    "low_confidence": false
+   }
+  }
+ ]
+}
