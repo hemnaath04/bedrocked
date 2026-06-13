@@ -1,0 +1,4 @@
+.env
+out/
+viewer/urn.txt
+__pycache__/

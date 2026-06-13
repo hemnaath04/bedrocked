@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><title>Sewershed · Autodesk Viewer — dig-plan</title>
+<link rel="stylesheet" href="https://developer.api.autodesk.com/modelderivative/v2/viewers/7.*/style.min.css">
+<script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/7.*/viewer3D.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=JetBrains+Mono:wght@400;700&display=swap');
+  html,body{margin:0;height:100%;background:#15110d;overflow:hidden;font-family:'JetBrains Mono',monospace}
+  #viewer{position:absolute;inset:0}
+  .hud{position:absolute;z-index:10;color:#f3eadf;pointer-events:none}
+  .title{top:18px;left:22px}
+  .title h1{font-family:'Fraunces',serif;font-weight:600;font-size:22px;margin:0;letter-spacing:-.5px}
+  .title h1 em{color:#e8a24a;font-style:italic}
+  .title .s{font-size:10px;color:#8c8073;letter-spacing:2px;text-transform:uppercase;margin-top:3px}
+  .legend{top:18px;right:22px;text-align:right;font-size:10px;line-height:1.9}
+  .legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-left:7px;vertical-align:middle}
+  .card{position:absolute;left:22px;bottom:24px;z-index:10;background:rgba(28,23,18,.82);backdrop-filter:blur(12px);
+        border:.5px solid rgba(232,215,190,.18);border-radius:13px;padding:15px 18px;min-width:230px;display:none}
+  .card .c{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#e8a24a}
+  .card .st{font-family:'Fraunces',serif;font-size:21px;color:#f3eadf;margin:2px 0 8px}
+  .card .sc{font-family:'JetBrains Mono';font-size:30px;font-weight:700}
+  .card .sc small{font-size:12px;color:#8c8073}
+  .card .chips{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}
+  .card .chip{font-size:9px;padding:3px 7px;border-radius:5px;border:.5px solid rgba(232,162,74,.3);color:#e8a24a}
+  .hint{bottom:24px;right:22px;font-size:10px;color:#8c8073}
+  .loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#8c8073;z-index:20;background:#15110d}
+</style></head>
+<body>
+<div id="viewer"></div>
+<div class="hud title"><h1>Sewershed <em>dig-plan</em></h1><div class="s">Somerville · Autodesk Platform Services</div></div>
+<div class="hud legend">
+  Dig first <i style="background:#d8462f"></i><br>Soon <i style="background:#d88f2b"></i><br>Later <i style="background:#4ea869"></i>
+  <div style="margin-top:6px;color:#5f574c">bar height = readiness</div>
+</div>
+<div class="card hud" id="card"></div>
+<div class="hud hint">click a street · scroll to zoom · drag to orbit</div>
+<div class="loading" id="loading">loading dig-plan into Autodesk Viewer…</div>
+
+<script>
+let META = {}, viewer = null;
+async function tokenFn(cb){ const r = await fetch('/api/token'); const j = await r.json(); cb(j.access_token, j.expires_in); }
+
+async function boot(){
+  META = await (await fetch('/meta')).json();
+  const urn = (await (await fetch('/urn')).text()).trim();
+  if(!urn){ document.getElementById('loading').textContent = 'No URN yet — run run_aps.py first.'; return; }
+
+  Autodesk.Viewing.Initializer({ env:'AutodeskProduction2', api:'streamingV2', getAccessToken: tokenFn }, () => {
+    viewer = new Autodesk.Viewing.GuiViewer3D(document.getElementById('viewer'),
+      { extensions:['Autodesk.DocumentBrowser'] });
+    viewer.start();
+    viewer.setTheme('dark-theme');
+    viewer.setBackgroundColor(21,17,13, 21,17,13);
+
+    Autodesk.Viewing.Document.load('urn:'+urn, (doc) => {
+      const root = doc.getRoot().getDefaultGeometry();
+      viewer.loadDocumentNode(doc, root).then(() => {
+        document.getElementById('loading').style.display='none';
+        // survey data is Z-up; viewer defaults Y-up (Cyvl reference fix)
+        viewer.navigation.setWorldUpVector(new THREE.Vector3(0,0,1));
+      });
+      // frame the model only once geometry is actually loaded (not before)
+      viewer.addEventListener(Autodesk.Viewing.GEOMETRY_LOADED_EVENT, () => {
+        viewer.navigation.setWorldUpVector(new THREE.Vector3(0,0,1));
+        viewer.fitToView();
+        // tilt to a 3/4 aerial so the bar heights read
+        const nav = viewer.navigation;
+        const c = nav.getPosition(), t = nav.getTarget();
+        nav.setView(new THREE.Vector3(t.x - 1200, t.y - 1200, 1400), t);
+        nav.setCameraUpVector(new THREE.Vector3(0,0,1));
+      });
+    }, (code,msg)=>{ document.getElementById('loading').textContent='load error '+code+' '+msg; });
+
+    // click a bar -> show its street + score
+    viewer.addEventListener(Autodesk.Viewing.SELECTION_CHANGED_EVENT, (e) => {
+      const card = document.getElementById('card');
+      if(!e.dbIdArray.length){ card.style.display='none'; return; }
+      viewer.getProperties(e.dbIdArray[0], (p) => {
+        const name = (p.name||'').trim();
+        const m = META[name];
+        if(!m){ card.style.display='none'; return; }
+        const col = m.score>=50?'#d8462f':m.score>=35?'#d88f2b':'#4ea869';
+        const chips = [];
+        if(m.flagged_basin) chips.push('⚠ basin flagged');
+        if(m.water_risk==='Failing'||m.water_risk==='High Risk') chips.push(m.water_risk.toLowerCase()+' water main');
+        card.innerHTML = `<div class="c">${m.catchment} · catchment</div>
+          <div class="st">${m.street}</div>
+          <div class="sc" style="color:${col}">${m.score}<small>/100 readiness</small></div>
+          <div class="chips">${chips.map(c=>`<span class="chip">${c}</span>`).join('')}</div>`;
+        card.style.display='block';
+      });
+    });
+  });
+}
+boot();
+</script>
+</body></html>
