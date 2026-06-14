@@ -107,5 +107,10 @@ Vercel serverless function — keys live only in Vercel environment variables.
 
 ---
 
+## Team
+
+Built collaboratively by our team at the hackathon — the shared repo we worked in:
+**https://github.com/yashphalle/Cyvl-Hack**
+
 **Sponsors:** Cyvl · Autodesk · NVIDIA · City of Boston
 *Physical-AI Hackathon · Somerville, MA · 2026*
