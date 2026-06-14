@@ -1,8 +1,8 @@
 export function scoreColor(score) {
   // red (high urgency) → amber → green (low urgency)
-  if (score >= 50) return [239, 68, 68];    // red
-  if (score >= 35) return [245, 158, 11];   // amber
-  return [34, 197, 94];                      // green
+  if (score >= 50) return [216, 54, 42];     // red  (#d8362a)
+  if (score >= 35) return [224, 138, 22];    // amber (#e08a16)
+  return [47, 158, 84];                       // green (#2f9e54)
 }
 
 export function scoreLabel(score) {
