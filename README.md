@@ -4,7 +4,8 @@
 
 🔗 **Live demo → https://sewershed-bedrocked.vercel.app**
 
-Built at the **Cyvl × Autodesk Physical-AI Hackathon** (Somerville, MA · June 2026).
+Built at the **Physical-AI Hackathon** (Somerville, MA · June 2026) — sponsored by
+**Cyvl · Autodesk · NVIDIA · City of Boston**.
 
 ---
 
@@ -106,4 +107,5 @@ Vercel serverless function — keys live only in Vercel environment variables.
 
 ---
 
-*Built at the Cyvl × Autodesk Hackathon, Somerville MA, 2026.*
+**Sponsors:** Cyvl · Autodesk · NVIDIA · City of Boston
+*Physical-AI Hackathon · Somerville, MA · 2026*
