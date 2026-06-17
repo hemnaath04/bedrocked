@@ -126,7 +126,8 @@ body {
 .info-popup strong { color: #8da0ff; display: block; margin-bottom: 3px; }
 
 /* ── filter panel ─────────────────────────────────────────────── */
-.fp-panel { position: fixed; top: 78px; left: 18px; z-index: 50; width: 252px; max-height: calc(100vh - 100px); display: flex; flex-direction: column; }
+/* leave room for the legend (~200px) at the bottom of the same column */
+.fp-panel { position: fixed; top: 78px; left: 18px; z-index: 50; width: 252px; max-height: calc(100vh - 320px); display: flex; flex-direction: column; }
 .fp-head { display: flex; align-items: center; gap: 8px; padding: 11px 14px; background: var(--ink); color: var(--paper); font-family: var(--display); font-size: 13px; font-weight: 700; letter-spacing: 1px; }
 .fp-head .fp-count { margin-left: auto; font-family: var(--mono); font-size: 10px; color: #a89f8a; letter-spacing: 0.5px; font-weight: 400; }
 .fp-reset { background: var(--accent); border: none; color: #fff; font-family: var(--mono); font-size: 9px; letter-spacing: 1px; padding: 3px 7px; cursor: pointer; }
@@ -196,8 +197,12 @@ body {
 .tt-street { font-size: 9.5px; color: var(--ink-2); margin-top: 5px; }
 
 /* ── evidence card ────────────────────────────────────────────── */
-.evidence-card { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); z-index: 80; width: 392px; max-width: calc(100vw - 560px); overflow: hidden; animation: cardUp .25s cubic-bezier(.2,.8,.2,1); }
-@keyframes cardUp { from { opacity: 0; transform: translate(-50%, 14px); } to { opacity: 1; transform: translate(-50%, 0); } }
+/* right-rail evidence card: top of map → just above the export bar */
+.evidence-card { position: fixed; top: 78px; right: 18px; bottom: 70px; z-index: 80; width: 392px; max-width: calc(100vw - 540px); display: flex; flex-direction: column; animation: cardUp .25s cubic-bezier(.2,.8,.2,1); }
+.evidence-card .card-img-wrap { flex: none; }
+.evidence-card .card-body { overflow-y: auto; flex: 1; }
+.card-body::-webkit-scrollbar { width: 5px; } .card-body::-webkit-scrollbar-thumb { background: var(--ink); }
+@keyframes cardUp { from { opacity: 0; transform: translateX(14px); } to { opacity: 1; transform: translateX(0); } }
 .card-img-wrap { position: relative; height: 152px; background: var(--surface-2); border-bottom: 1.5px solid var(--ink); }
 .card-accent { position: absolute; top: 0; left: 0; right: 0; height: 4px; z-index: 2; }
 .card-accent.high { background: var(--red); } .card-accent.medium { background: var(--amber); } .card-accent.low { background: var(--green); }
